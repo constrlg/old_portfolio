@@ -1,0 +1,927 @@
+/* breakpoints:
+    mobile: 576px;
+    tablet: 768px;
+    laptop: 992px;
+    desktop: 1024px; */
+
+@font-face {
+    font-family: Akira;
+    src: url("../assets/font/Akira.otf") format("opentype");
+}
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: url("../assets/image/cursor.png"), auto;
+    font-family: Akira, sans-serif;
+    letter-spacing: 1px;
+}
+
+html, body 
+{
+    scroll-behavior: smooth;
+    color: var(--white);
+    background-color: var(--black);
+} 
+
+:root
+{
+    --white: rgb(255, 255, 255);
+    --black: rgb(17, 17, 17);
+    --gray: rgb(118, 118, 118);
+}
+
+ul 
+{
+    list-style: none;
+}
+a 
+{
+    text-decoration: none;
+}
+
+/* .loader 
+{
+    position: fixed;
+    background-color: var(--black);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    transition-duration: 0.5s;
+}
+
+.loader .hero-img 
+{
+    width: 60px;
+    margin-bottom: 10px;
+    animation: loader_img_animation 0.5s ease-in-out infinite;
+}
+
+.main-wrapper 
+{
+    display: none;
+}
+
+.main-wrapper.main-wrapper-active
+{
+    display: block;
+}
+
+@keyframes loader_img_animation {
+    0% {
+        transform: scale(1);
+    }
+    50% 
+    {
+        transform: scale(0.9);
+    }
+    100% 
+    {
+        transform: scale(1);
+    }
+}
+
+.loader .loader-title
+{
+    font-size: 15px;
+}
+
+.loader.loader-hidden
+{
+    opacity: 0;
+    visibility: hidden;
+} */
+
+.title 
+{
+    font-size: 40px;
+    position: relative;
+}
+
+.title::before 
+{
+    font-size: 80px;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--white);
+    opacity: 15%;
+    position: absolute;
+}
+
+.container 
+{
+    padding: 0 100px;
+}
+
+#nav
+{
+    background-color: var(--black);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    padding: 30px 0;
+}
+
+#nav.nav-active
+{
+    box-shadow: 0 0 3px 3px rgba(0,0,0,0.3);
+}
+
+#nav .container .nav-menu
+{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#nav .container .nav-menu .nav-menu-list
+{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+#nav .container .nav-menu .nav-menu-list .nav-menu-item
+{
+    font-size: 14px;
+}
+
+
+#nav .container .nav-menu .nav-menu-list .nav-menu-item .nav-menu-link
+{
+    color: var(--white);
+    transition-duration: 0.3s;
+}
+
+#nav .container .nav-menu .nav-menu-list .nav-menu-item .nav-menu-link:hover
+{
+    color: transparent;
+    -webkit-text-stroke: 1px var(--white);
+    transition-duration: 0.5s;
+}
+
+#nav .container .nav-menu .nav-menu-list #download-resume
+{
+    padding: 10px 15px;
+    border-radius: 3px;
+    border: 2px solid var(--white);
+    color: var(--white);
+    background-color: transparent;
+}
+
+#nav .container .nav-menu .nav-menu-list #download-resume:hover 
+{
+    background-color: var(--white);
+    color: var(--black);
+    transition-duration: 0.5s;
+}
+
+#nav .container .nav-menu .nav-menu-list .contacts
+{
+    display: none;
+    margin-top: 15px;
+}
+
+#nav .container .nav-menu .nav-menu-list .contacts .contacts-item
+{
+    font-size: 12px;
+    margin-bottom: 5px;
+    color: var(--gray);
+}
+
+#nav .container .nav-menu #hamburger-menu-btn
+{
+    display: block;
+    background: none;
+    position: relative;
+    border: none;
+    display: none;
+}
+
+#nav .container .nav-menu #hamburger-menu-btn:focus
+{
+    outline: none;
+}
+
+#nav .container .nav-menu #hamburger-menu-btn .hamburger-menu-btn-line
+{
+    width: 35px;
+    height: 2px;
+    background-color: var(--white);
+    margin-bottom: 8px;
+    display: block;
+    transition-duration: 0.3s;
+}
+
+#nav .container .nav-menu #hamburger-menu-btn .hamburger-menu-btn-line:last-child
+{
+    margin-bottom: unset;
+}
+#nav .container .nav-menu #hamburger-menu-btn.hamburger-menu-btn-active .hamburger-menu-btn-line:first-child
+{
+    position: absolute;
+    transform: rotate(45deg);
+    top: 0;
+}
+
+#nav .container .nav-menu #hamburger-menu-btn.hamburger-menu-btn-active .hamburger-menu-btn-line:nth-child(2)
+{
+    opacity: 0;
+}
+
+#nav .container .nav-menu #hamburger-menu-btn.hamburger-menu-btn-active .hamburger-menu-btn-line:last-child
+{
+    position: absolute;
+    transform: rotate(-45deg);
+    top: 0;
+}
+
+
+/* #main
+{
+    background-color: var(--black);
+}
+#main .main-wrapper 
+{
+    padding: 40px 100px;
+} */
+
+#hero 
+{
+    padding: 120px 0;
+}
+#hero .container .hero-info .hero-profile 
+{
+    display: flex;
+    align-items: center;
+}
+#hero .container .hero-info .hero-profile .hero-img 
+{
+    margin-right: 10px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+#hero .container .hero-info .hero-profile .hero-fullname,
+.hero-profession
+{
+    font-size: 12px;
+}
+
+#hero .container .hero-info .hero-profile .hero-profession 
+{
+    color: var(--gray);
+}
+
+#hero .container .hero-info .hero-intro 
+{
+    margin-top: 20px;
+}
+
+#hero .container .hero-info .hero-intro #outline-fullname
+{
+    color: transparent;
+    -webkit-text-stroke: 1px var(--white);
+}
+
+#hero .container .mouse-scroll-container   
+{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 40px;
+}
+
+#hero .container .mouse
+{
+    width: 30px;
+    height: 60px;
+    border: 3px solid var(--white);
+    right: 0;
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
+    position: relative;
+}
+
+#hero .container .mouse::before
+{
+    content: "Scroll";
+    font-size: 8px;
+    position: absolute;
+    top: -20px;
+}
+#hero .container .scroll
+{
+    width: 3px;
+    height: 10px;
+    background-color: var(--white);
+    display: block;
+    border-radius: 10px;
+    margin-top: 10px;
+    animation: mouse_scroll_animation 1.5s ease-in-out infinite;
+}
+
+@keyframes mouse_scroll_animation {
+    0%
+    {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(3px);
+    }
+
+    100% 
+    {
+        transform: translate(0%);
+    }
+}
+
+
+/* SKILLS */
+#skills
+{
+    padding: 120px 0;
+}
+#skills .container .skills-title 
+{
+    display: flex;
+    align-items: center;
+}
+
+#skills .container .skills-title::before
+{
+    content: "Skills";
+    left: 0;
+}
+
+#skills .container .skills-list
+{
+    margin-top: 30px;
+    display: grid;
+    gap: 10px;
+}
+
+#skills .container .skills-list .skills-item 
+{
+    font-size: 30px;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--white);
+}
+#skills .container .skills-list .skills-item::before
+{
+    content: "○";
+    margin-right: 10px;
+}
+
+/* PROJECTS */
+#projects
+{
+    padding: 120px 0;
+}
+
+#projects .container .projects-title 
+{
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+#projects .container .projects-title::before
+{
+    content: "Projects";
+    left: 0;
+}
+
+#projects .container .projects-categories 
+{
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    text-align: center;
+}
+
+#projects .container .projects-categories .project-categories-item-link
+{
+    font-size: 30px;
+    border: 2px solid var(--white);
+    padding: 10px;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--white);
+    transition-duration: 0.3s;
+    
+}
+#projects .container .projects-categories .project-categories-item-link:hover 
+{
+    color: var(--black);
+    -webkit-text-stroke: 1px var(--black);
+    background-color: var(--white);
+}
+
+.mouse-scroll-up
+{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--white);
+    padding: 10px;
+    border-radius: 3px;
+    display: none;
+}
+
+.mouse-scroll-up .arrow-up-solid
+{
+    height: 20px;
+}
+
+.mouse-scroll-up.mouse-scroll-up-active
+{
+    display: block;
+}
+
+
+/* WEB-DEVELOPMENT-PROJECTS */
+#web-development-projects
+{
+    padding: 120px 0;
+}
+
+#web-development-projects .container .web-development-projects-title 
+{
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+#web-development-projects .container .web-development-projects-title::before
+{
+    content: "Web Dev";
+    left: 0;
+}
+
+#web-development-projects .container .web-development-projects-list 
+{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 30px;
+}
+
+#web-development-projects .container .web-development-projects-list .web-development-projects-item  
+{
+    position: relative;
+}
+
+#web-development-projects .container .web-development-projects-list .web-development-projects-item .web-development-projects-item-overlay 
+{ 
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: var(--white);
+    width: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    overflow: hidden;
+    transition-duration: 0.3s;
+}
+
+#web-development-projects .container .web-development-projects-list .web-development-projects-img
+{
+    width: 100%;
+    border-radius: 3px;
+}
+
+#web-development-projects .container .web-development-projects-list .web-development-projects-item .web-development-projects-item-overlay .web-development-projects-item-overlay-view-project-btn
+{
+    color: var(--black);
+    border: 2px solid var(--black);
+    padding: 10px;
+    font-size: 10px;
+    text-align: center;
+}
+
+#web-development-projects .container .web-development-projects-list .web-development-projects-item:hover > .web-development-projects-item-overlay 
+{ 
+   width: 100%;
+}
+
+
+
+/* DIGITAL-ART-PROJECTS */
+#digital-art-projects
+{
+    padding: 120px 0;
+}
+
+#digital-art-projects .container .digital-art-projects-title 
+{
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+#digital-art-projects .container .digital-art-projects-title::before
+{
+    content: "Digital Art";
+    left: 0;
+}
+
+.digital-art-projects .container .digital-art-projects-list
+{ 
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 30px;
+}
+
+
+.digital-art-projects .container .digital-art-projects-list .digital-art-projects-item .digital-art-projects-item-img
+{
+    width: 100%;
+    border-radius: 3px;
+}
+
+
+/* WEB-DESIGN-PROJECTS */
+#web-design-projects
+{
+    padding: 120px 0;
+}
+
+#web-design-projects .container .web-design-projects-title 
+{
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+#web-design-projects .container .web-design-projects-title::before
+{
+    content: "Web Design";
+    left: 0;
+}
+
+#web-design-projects .container .web-design-projects-list
+{ 
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 30px;
+}
+
+#web-design-projects .container .web-design-projects-list .web-design-projects-item
+{
+    position: relative;
+}
+
+#web-design-projects .container .web-design-projects-list .web-design-projects-item .web-design-projects-item-overlay
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: var(--white);
+    width: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    overflow: hidden;
+    transition-duration: 0.3s;
+}
+
+#web-design-projects .container .web-design-projects-list .web-design-projects-item .web-design-projects-img
+{
+    width: 100%;
+    border-radius: 3px;
+}
+
+#web-design-projects .container .web-design-projects-list .web-design-projects-item .web-design-projects-item-overlay .web-design-projects-item-overlay-dl-project-btn 
+{
+    color: var(--black);
+    border: 2px solid var(--black);
+    padding: 10px;
+    font-size: 10px;
+    text-align: center;
+}
+
+#web-design-projects .container .web-design-projects-list .web-design-projects-item:hover > .web-design-projects-item-overlay 
+{
+    width: 100%;
+}
+
+/* GRAPHIC-DESIGN-PROJECTS */
+#graphic-design-projects
+{
+    padding: 120px 0;
+}
+
+#graphic-design-projects .container .graphic-design-projects-title 
+{
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+#graphic-design-projects .container .graphic-design-projects-title::before
+{
+    content: "Web Design";
+    left: 0;
+}
+
+#graphic-design-projects .container .graphic-design-projects-list
+{ 
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 30px;
+}
+
+#graphic-design-projects .container .graphic-design-projects-list .graphic-design-projects-item .graphic-design-projects-item-img
+{
+    width: 100%;
+}
+
+
+#footer
+{
+    padding: 120px 0;
+}
+
+#footer .container .footer-title 
+{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#footer .container .footer-title::before
+{
+    content: "Get in Touch";
+    text-align: center;
+}
+
+#footer .container .social-media-list
+{
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+    align-items: center;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+    text-align: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+#footer .container .social-media-list .social-media-list-item .social-media-list-link
+{
+    font-size: 30px;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--white);
+    transition-duration: 0.3s;
+}
+
+#footer .container .social-media-list .social-media-list-item .social-media-list-link:hover
+{
+    color: var(--white);
+}
+
+#footer .container .contacts
+{
+    text-align: center;
+    margin-top: 30px;
+    display: grid;
+    row-gap: 10px;
+}
+
+#footer .container .contacts .contacts-item
+{
+    font-size: 12px;
+}
+
+#footer .container .copy
+{
+    font-size: 8px;
+    text-align: center;
+    color: var(--gray);
+    margin-top: 30px;
+}
+
+
+/* LAPTOP */
+@media screen and (max-width: 1024px) and (min-width: 769px) 
+{
+    .container
+    {
+        padding: 0 80px;
+    }
+}
+
+/* TABLET */
+@media screen and (max-width: 768px) and (min-width: 481px) 
+{
+    .title 
+    {
+        font-size: 30px;
+    }
+
+    .title::before
+    {
+        font-size: 50px;
+    }
+
+    .container
+    {
+        padding: 0 40px;
+    }
+
+    /* NAV */
+    #nav .container .nav-menu .nav-menu-list
+    {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(17,17,17, 95%);
+        justify-content: center;
+        align-items: center;
+    }
+
+    #nav .container .nav-menu .nav-menu-list.nav-menu-list-active
+    {
+        display: flex;
+    }
+
+    #nav .container .nav-menu .nav-menu-list .contacts
+    {
+        display: block;
+        text-align: center;
+    }
+
+    #nav .container .nav-menu #hamburger-menu-btn
+    {
+        display: block;
+    }
+
+    /* PROJECTS */
+    #projects .container .projects-categories
+    {
+        grid-template-columns: 1fr;
+    }
+
+    /* DIGITAL-ART-PROJECTS */
+    #digital-art-projects .container .digital-art-projects-list 
+    {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* WEB-DESIGN-PROJECTS */
+    #web-design-projects .container .web-design-projects-list 
+    {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* GRAPHIC-DESIGN-PROJECTS */
+    #graphic-design-projects .container .graphic-design-projects-list 
+    {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+}
+
+/* MOBILE */
+@media screen and (max-width: 480px)
+{
+    .title 
+    {
+        font-size: 20px;
+    }
+    
+    .title::before
+    {
+        font-size: 30px;
+    }
+
+    .container 
+    {
+        padding: 0 30px;
+    }
+
+    /* NAV */
+    #nav .container .nav-menu .nav-menu-list .contacts .contacts-item
+    {
+        font-size: 8px;
+    }
+
+    #nav .container .nav-menu .nav-menu-list
+    {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(17,17,17, 95%);
+        justify-content: center;
+        align-items: center;
+    }
+
+    #nav .container .nav-menu .nav-menu-list.nav-menu-list-active
+    {
+        display: flex;
+    }
+
+    #nav .container .nav-menu .nav-menu-list .contacts
+    {
+        display: block;
+        text-align: center;
+    }
+
+    #nav .container .nav-menu #hamburger-menu-btn
+    {
+        display: block;
+    }
+
+    #hero .container .hero-info .hero-profile .hero-fullname,
+    .hero-profession
+    {
+        font-size: 8px;
+    }
+
+    /* SKILLS */
+    #skills .container .skills-list .skills-item 
+    {
+        font-size: 20px;
+    }
+
+    /* PROJECTS */
+    #projects .container .projects-categories
+    {
+        grid-template-columns: 1fr;
+    }
+
+    #projects .container .projects-categories .project-categories-item-link
+    {
+        font-size: 20px;
+    }
+
+    /* web-development-PROJECTS */
+    #web-development-projects .container .web-development-projects-list 
+    {
+        grid-template-columns: 1fr;
+    }
+
+    /* DIGITAL-ART-PROJECTS */
+    #digital-art-projects .container .digital-art-projects-list 
+    {
+        grid-template-columns: 1fr;
+    }
+
+    /* WEB-DESIGN-PROJECTS */
+    #web-design-projects .container .web-design-projects-list 
+    {
+        grid-template-columns: 1fr;
+    }
+
+    /* GRAPHIC-DESIGN-PROJECTS */
+    #graphic-design-projects .container .graphic-design-projects-list 
+    {
+        grid-template-columns: 1fr;
+    }
+
+    /* FOOTER */
+    #footer .container .social-media-list .social-media-list-item .social-media-list-link
+    {
+        font-size: 20px;
+    }
+
+    #footer .container .contacts .contacts-item 
+    {
+        font-size: 8px;
+    }
+
+}
